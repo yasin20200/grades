@@ -1,0 +1,32 @@
+<H<html>
+<head>
+<tittle>Making the grade</tittle>
+</head>
+<body>
+<h1>Making the grade</h1>
+<ul id="grade"></ul> 
+   
+   
+</body>
+<script type="text/javascript">
+   let list = document.getElementById("grade"); 
+  var grades = "jim|25, sue|32, mary|34, ann|22, ted|28, frank|15, lisa|19, mike|30, ahn|26, vishaya|27";
+  let array = grades.split(",")
+  document.write("Total Students: " 
+ + array.length + "<br>")
+ let avg = 0
+ let max = []
+  for (let n in array) {
+    let split = array[n].split("|")
+    let li = document.createElement("li")
+  li.innerText = split[0] + " - " + split[1];
+  li.style.textTransform = "capitalize"
+  list.appendChild(li);
+  avg += parseInt(split[1]); 
+  max.push(parseInt(split[1]))
+}
+document.write("Min Score: " + Math.min(...max) + "<br>")
+document.write("Max Score: " + Math.max(...max) + "<br>")
+document.write("avarage score: " + avg/array.length)
+</script>
+</html>
